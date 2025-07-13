@@ -12,7 +12,7 @@
   4. [Data Asset](#data-asset)
   5. [Behavior Tree](#behavior-tree)
   6. [Delegate](#delegate)
-  7. [Widget, HUD](#widget,-hud)
+  7. [Widget, HUD](#widget-hud)
   8. [Interface](#interface)
 ---
 
