@@ -17,7 +17,9 @@
 ---
 
 ## CDO   
-(TODO 초기화된 클래스 프로퍼티 패널 이미지 삽입)
+
+<img src="https://github.com/sturdyChair/asset/blob/main/ArenaBattle%20Image/GameMode%20Property.png" width="600" height="400"/>   
+
 ```
 AABGameMode::AABGameMode()
 {
@@ -37,7 +39,9 @@ AABGameMode::AABGameMode()
 ---
 
 ## Animation Blueprint   
- (TODO 몽타주, 애니메이션 FSM 이미지 삽입)
+
+<img src="https://github.com/sturdyChair/asset/blob/main/ArenaBattle%20Image/ABP%20ABCharacter.png" width="600" height="400"/>   
+
 ```
 class ARENABATTLE_API UABAnimInstance : public UAnimInstance
 {
@@ -62,7 +66,9 @@ class ARENABATTLE_API UABAnimInstance : public UAnimInstance
 ---
 
 ## Enhanced Input
- (TODO Input Context 블루프린트 이미지 삽입)
+
+<img src="https://github.com/sturdyChair/asset/blob/main/ArenaBattle%20Image/IMC.png" width="600" height="400"/>   
+
 ```
 void AABPlayerCharacter::SetCharacterControl(ECharactetControlType NewCharacterControlType)
 {
@@ -86,14 +92,18 @@ void AABPlayerCharacter::SetCharacterControl(ECharactetControlType NewCharacterC
 ---
 
 ## Data
-(적당한 Data Asset 이미지 추가)
+
+<img src="https://github.com/sturdyChair/asset/blob/main/ArenaBattle%20Image/FTable_Stat.png" width="600" height="400"/>   
+
    - Data Asset 클래스를 이용해 캐릭터나 아이템을 위한 다양한 정보를 관리   
    - FTable 구조체를 이용해 캐릭터 스탯을 csv 파일로 관리   
 
 ---
 
 ## Behavior Tree   
-(Behavior Tree 이미지 추가)
+
+<img src="https://github.com/sturdyChair/asset/blob/main/ArenaBattle%20Image/BT.png" width="600" height="400"/>   
+
    - Black Board와 Behavior Tree를 이용해 ai 제어
    - Selector : 컴포짓 노드, 자손 중 하나라도 성공하면 성공(즉, 하나의 자손만 성공적으로 실행)   
    - Sequence : 컴포짓 노드, 자손들이 전부 성공하면 성공(즉, 실패할 때까지 모든 자손 실행)   
@@ -128,7 +138,9 @@ struct FTakeItemDelegateWrapper
 ---
 
 ## Widget, HUD
-(widget 블루프린트 이미지)
+
+<img src="https://github.com/sturdyChair/asset/blob/main/ArenaBattle%20Image/WBP_ABHUD.png" width="600" height="400"/>   
+
    - 언리얼의 widget을 이용해 인게임 UI나 HUD를 구성
    - 시각적 정보를 Blueprint로 구성하고, C++에서 로직을 구현
 
