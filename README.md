@@ -104,7 +104,23 @@ void AABPlayerCharacter::SetCharacterControl(ECharactetControlType NewCharacterC
 ---
 
 ## Delegate
-(적당한 델리게이트 선언, 등록 구문)
+```
+DECLARE_DELEGATE_OneParam(FOnTakeItemDelegate, class UABItemData* /*InItemData*/);
+USTRUCT(BlueprintType)
+struct FTakeItemDelegateWrapper
+{
+	...
+	FOnTakeItemDelegate ItemDelegate;
+};
+```
+> OnTakeItem 델리게이트 + wrapper 선언(ABCharacterBase.h)   
+```
+	TakeItemActions.Add(FTakeItemDelegateWrapper{FOnTakeItemDelegate::CreateUObject(this, &AABCharacterBase::EquipWeapon)});
+	TakeItemActions.Add(FTakeItemDelegateWrapper{FOnTakeItemDelegate::CreateUObject(this, &AABCharacterBase::DrinkPotion)});
+	TakeItemActions.Add(FTakeItemDelegateWrapper{FOnTakeItemDelegate::CreateUObject(this, &AABCharacterBase::ReadScroll)});
+```
+> ABCharacterBase 생성자 일부, 델리게이트 등록(ABCharacterBase.cpp)
+
    - 델리게이트의 broadcast에 따라, 이에 등록된 함수(들)를 실행
    - 직접 참조를 하지 않아 클래스간의 의존성을 낮춤
    - 구독자는 발행자의 신호에 따라 정해진 동작을 수행하므로, 매 프레임 상태를 확인하는 낭비가 필요 없음   
