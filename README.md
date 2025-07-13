@@ -9,6 +9,11 @@
   1. [CDO](#CDO)
   2. [Animation Blueprint](#animation-blueprint)
   3. [Enhanced Input](#enhanced-input)
+  4. [Data Asset](#data-asset)
+  5. [Behavior Tree](#behavior-tree)
+  6. [Delegate](#delegate)
+  7. [Widget, HUD](#widget,-hud)
+  8. [Interface](#interface)
 ---
 
 ## CDO   
@@ -76,7 +81,44 @@ void AABPlayerCharacter::SetCharacterControl(ECharactetControlType NewCharacterC
 > 입력 컨텍스트를 변경하는 함수(AABPlayerCharacter.cpp)   
 
    - 향상된 입력을 사용하여 사용자 입력과 캐릭터의 멤버 함수를 바인딩   
-   - 입력 컨텍스트를 이용하여 여러 입력 모드를 자유롭게 변경 가능
+   - 입력 컨텍스트를 이용하여 여러 입력 모드를 자유롭게 변경 가능   
 
 ---
+
+## Data Asset   
+(적당한 Data Asset 이미지 추가)
+   - Data Asset 클래스를 이용해 캐릭터나 아이템의 스탯 등 다양한 정보를 csv 등 다양한 포멧의 파일로 관리
+
+---
+
+## Behavior Tree   
+(Behavior Tree 이미지 추가)
+   - Black Board와 Behavior Tree를 이용해 ai 제어
+   - Selector : 컴포짓 노드, 자손 중 하나라도 성공하면 성공(즉, 하나의 자손만 성공적으로 실행)   
+   - Sequence : 컴포짓 노드, 자손들이 전부 성공하면 성공(즉, 실패할 때까지 모든 자손 실행)   
+   - Task : 실제 작업을 수행하는 노드, 직접 정의하거나 미리 정의된 노드를 사용 가능    
+   - Service : 컴포짓, 태스크 노드에 부착되어 정의된 주기마다 실행됨, 주로 블랙보드 확인과 업데이트에 사용   
+   - Decorator : 컴포짓, 태스크 노드에 부착되어 노드 실행 여부를 판정함, abort를 통해 트리를 초기상태에서 다시 진행할 수도 있음   
+
+---
+
+## Delegate
+(적당한 델리게이트 선언, 등록 구문)
+   - 델리게이트의 broadcast에 따라, 이에 등록된 함수(들)를 실행
+   - 직접 참조를 하지 않아 클래스간의 의존성을 낮춤
+   - 구독자는 발행자의 신호에 따라 정해진 동작을 수행하므로, 매 프레임 상태를 확인하는 낭비가 필요 없음   
+
+---
+
+## Widget, HUD
+(widget 블루프린트 이미지)
+   - 언리얼의 widget을 이용해 인게임 UI나 HUD를 구성
+   - 시각적 정보를 Blueprint로 구성하고, C++에서 로직을 구현
+
+---
+
+## Interface
+(적당한 인터페이스 선언)
+   - 객체간 직접 참조를 피하고 Interface를 통한 우회적 참조를 통해 유지보수성 향상
+   - Character - Notify, Character - UI, Character - Item 등 다양한 객체간 통신을 위해 사용   
 
