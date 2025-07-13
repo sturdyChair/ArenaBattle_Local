@@ -9,7 +9,7 @@
   1. [CDO](#CDO)
   2. [Animation Blueprint](#animation-blueprint)
   3. [Enhanced Input](#enhanced-input)
-  4. [Data Asset](#data-asset)
+  4. [Data](#data)
   5. [Behavior Tree](#behavior-tree)
   6. [Delegate](#delegate)
   7. [Widget, HUD](#widget-hud)
@@ -85,9 +85,10 @@ void AABPlayerCharacter::SetCharacterControl(ECharactetControlType NewCharacterC
 
 ---
 
-## Data Asset   
+## Data
 (적당한 Data Asset 이미지 추가)
-   - Data Asset 클래스를 이용해 캐릭터나 아이템의 스탯 등 다양한 정보를 csv 등 다양한 포멧의 파일로 관리
+   - Data Asset 클래스를 이용해 캐릭터나 아이템을 위한 다양한 정보를 관리   
+   - FTable 구조체를 이용해 캐릭터 스탯을 csv 파일로 관리   
 
 ---
 
