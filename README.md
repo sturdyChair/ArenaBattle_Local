@@ -32,7 +32,24 @@ AABGameMode::AABGameMode()
 ---
 
 ## Animation Blueprint   
- (TODO 몽타주, 애니메이션 FSM, AnimInstance 클래스 이미지 삽입)
+ (TODO 몽타주, 애니메이션 FSM 이미지 삽입)
+```
+class ARENABATTLE_API UABAnimInstance : public UAnimInstance
+{
+	...
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
+	TObjectPtr<class ACharacter> Owner;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
+	TObjectPtr<class UCharacterMovementComponent> Movement;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character)
+	FVector Velocity;
+	...
+};
+```
+> UABAnimInstance.h
+
    - C++에서 선언한 변수를 바탕으로 FSM을 통해 캐릭터의 Animation 제어   
    - Animation Montage를 이용해 여러 애니메이션을 한번에 관리   
    - Blend Space를 통해 현제 상태에 따라 여러 애니메이션을 Blend(ex. 현제 속도에 따라 idle->walk->run 애니메이션 관리)   
