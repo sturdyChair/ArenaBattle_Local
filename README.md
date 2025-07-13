@@ -22,8 +22,7 @@ AABGameMode::AABGameMode()
 	if(PlayerControllerRef.Class) PlayerControllerClass = PlayerControllerRef.Class;
 }
 ```
-> AABGameMode::AABGameMode (ABGameMode.cpp)   
-> AABGameMode의 생성자   
+> AABGameMode의 생성자 (ABGameMode.cpp)   
 
    - UObject 파생 클래스의 디폴트 객체   
    - 생성자에서 초기화된 대로 객체가 생성되며 주로 초기값을 설정하는 대 쓰임   
@@ -49,8 +48,7 @@ class ARENABATTLE_API UABAnimInstance : public UAnimInstance
 	...
 };
 ```
-> UABAnimInstance.h
-> ABAnimInstance 헤더의 프로퍼티 선언   
+> ABAnimInstance 헤더의 프로퍼티 선언(UABAnimInstance.h)   
 
    - C++에서 선언한 변수를 바탕으로 FSM을 통해 캐릭터의 Animation 제어   
    - Animation Montage를 이용해 여러 애니메이션을 한번에 관리   
@@ -75,8 +73,7 @@ void AABPlayerCharacter::SetCharacterControl(ECharactetControlType NewCharacterC
 	}
 }
 ```
-> AABPlayerCharacter::SetCharacterControl (AABPlayerCharacter.cpp)
-> 입력 컨텍스트를 변경하는 함수
+> 입력 컨텍스트를 변경하는 함수(AABPlayerCharacter.cpp)   
 
    - 향상된 입력을 사용하여 사용자 입력과 캐릭터의 멤버 함수를 바인딩   
    - 입력 컨텍스트를 이용하여 여러 입력 모드를 자유롭게 변경 가능
