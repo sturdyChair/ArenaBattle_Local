@@ -22,7 +22,7 @@ AABGameMode::AABGameMode()
 	if(PlayerControllerRef.Class) PlayerControllerClass = PlayerControllerRef.Class;
 }
 ```
-> ABGameMode.cpp   
+> AABGameMode::AABGameMode() (ABGameMode.cpp)   
 
    - UObject 파생 클래스의 디폴트 객체   
    - 생성자에서 초기화된 대로 객체가 생성되며 주로 초기값을 설정하는 대 쓰임   
