@@ -135,7 +135,18 @@ struct FTakeItemDelegateWrapper
 ---
 
 ## Interface
-(적당한 인터페이스 선언)
+```
+class ARENABATTLE_API IABCharacterItemInterface
+{
+	GENERATED_BODY()
+
+	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+public:
+	virtual void TakeItem(class UABItemData* InItemData) = 0;
+};
+```
+> Character - Item 간 인터페이스 선언(ABCharacterItemInterface.h)
+
    - 객체간 직접 참조를 피하고 Interface를 통한 우회적 참조를 통해 유지보수성 향상
    - Character - Notify, Character - UI, Character - Item 등 다양한 객체간 통신을 위해 사용   
 
