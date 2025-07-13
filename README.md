@@ -12,7 +12,18 @@
 ---
 
 ## CDO   
-(TODO 적당한 생성자, 초기화된 클래스 프로퍼티 패널 이미지 삽입)
+(TODO 초기화된 클래스 프로퍼티 패널 이미지 삽입)
+```
+AABGameMode::AABGameMode()
+{
+	static ConstructorHelpers::FClassFinder<APawn> TPCRef(TEXT("/Game/ArenaBattle/Blueprint/BP_ABPlayerCharacter.BP_ABPlayerCharacter_C"));
+	if (TPCRef.Class) DefaultPawnClass = TPCRef.Class;
+	static ConstructorHelpers::FClassFinder<APlayerController> PlayerControllerRef(TEXT("/Script/ArenaBattle.ABPlayerController"));
+	if(PlayerControllerRef.Class) PlayerControllerClass = PlayerControllerRef.Class;
+}
+```
+> ABGameMode.cpp   
+
    - UObject 파생 클래스의 디폴트 객체   
    - 생성자에서 초기화된 대로 객체가 생성되며 주로 초기값을 설정하는 대 쓰임   
    - 에디터 실행 시 생성되기 때문에 생성자 함수나 헤더를 수정했다면 에디터를 재시작하는 것이 좋음   
